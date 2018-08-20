@@ -15,8 +15,8 @@ where i_current_price between 0.99 and 1.49
     and item.i_item_sk = catalog_sales.cs_item_sk
     and catalog_sales.cs_warehouse_sk = warehouse.w_warehouse_sk 
     and catalog_sales.cs_sold_date_sk = date_dim.d_date_sk
-    and date_dim.d_date between (cast ('1998-04-08' as date) - interval '30' days) 
-                            and (cast ('1998-04-08' as date) + interval '30' days)
+    and date_dim.d_date between (cast ('1998-04-08' as date) - interval '30' day) 
+                            and (cast ('1998-04-08' as date) + interval '30' day)
 group by w_state
     ,i_item_id
 order by w_state

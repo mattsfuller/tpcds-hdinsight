@@ -12,7 +12,7 @@ with sr_items as
             where d_week_seq in (
                 select d_week_seq
                 from date_dim
-                where d_date in ('1998-01-02','1998-10-15','1998-11-10')
+                where d_date in (cast('1998-01-02' as date), cast('1998-10-15' as date), cast('1998-11-10' as date))
             )
         )
         and sr_returned_date_sk = d_date_sk
@@ -31,7 +31,7 @@ with sr_items as
             where d_week_seq in (
                 select d_week_seq
                 from date_dim
-                where d_date in ('1998-01-02','1998-10-15','1998-11-10')
+                where d_date in (cast('1998-01-02' as date), cast('1998-10-15' as date), cast('1998-11-10' as date))
             )
         )
         and cr_returned_date_sk = d_date_sk
@@ -50,7 +50,7 @@ with sr_items as
             where d_week_seq in (
                 select d_week_seq
                 from date_dim
-                where d_date in ('1998-01-02','1998-10-15','1998-11-10')
+                where d_date in (cast('1998-01-02' as date), cast('1998-10-15' as date), cast('1998-11-10' as date))
             )
         )
         and wr_returned_date_sk = d_date_sk

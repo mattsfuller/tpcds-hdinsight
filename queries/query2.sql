@@ -68,3 +68,4 @@ from (
 ) z
 where d_week_seq1=d_week_seq2-53
 order by d_week_seq1
+;

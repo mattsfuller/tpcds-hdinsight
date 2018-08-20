@@ -90,7 +90,7 @@ union all
         , profit
     from wsr
 ) x
-group by channel, id with rollup
+group by rollup(channel, id)
 order by channel
         ,id
 limit 100

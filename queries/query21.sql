@@ -12,7 +12,7 @@ from (
         and item.i_item_sk = inventory.inv_item_sk
         and inventory.inv_warehouse_sk = warehouse.w_warehouse_sk
         and inventory.inv_date_sk = date_dim.d_date_sk
-        and d_date between (cast ('1998-04-08' as date) - interval '30' days) and (cast ('1998-04-08' as date) + interval '30' days)
+        and d_date between (cast ('1998-04-08' as date) - interval '30' day) and (cast ('1998-04-08' as date) + interval '30' day)
     group by w_warehouse_name
         , i_item_id
 ) x

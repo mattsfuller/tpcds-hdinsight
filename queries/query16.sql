@@ -1,11 +1,11 @@
-select count(distinct cs_order_number) as `order count` 
-    ,sum(cs_ext_ship_cost) as `total shipping cost` 
-    ,sum(cs_net_profit) as `total net profit` 
+select count(distinct cs_order_number) as "order count"
+    ,sum(cs_ext_ship_cost) as "total shipping cost"
+    ,sum(cs_net_profit) as "total net profit"
 from catalog_sales cs1 
     ,date_dim 
     ,customer_address 
     ,call_center 
-where d_date between '2001-4-01' and (cast('2001-4-01' as date) + interval '60' days) 
+where d_date between cast('2001-4-01' as date) and (cast('2001-4-01' as date) + interval '60' day) 
     and cs1.cs_ship_date_sk = d_date_sk 
     and cs1.cs_ship_addr_sk = ca_address_sk 
     and ca_state = 'NY' 
@@ -22,5 +22,5 @@ where d_date between '2001-4-01' and (cast('2001-4-01' as date) + interval '60' 
             from catalog_returns cr1
             where cs1.cs_order_number = cr1.cr_order_number
         )
-order by `order count` 
+order by "order count"
 limit 100;
